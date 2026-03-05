@@ -265,10 +265,14 @@ async function main() {
     addError('Marketplace "owner.name" is required.');
   }
 
-  if (!Array.isArray(marketplace.plugins) || marketplace.plugins.length === 0) {
-    addError('Marketplace "plugins" must be a non-empty array.');
+  if (!Array.isArray(marketplace.plugins)) {
+    addError('Marketplace "plugins" must be an array.');
     summarizeAndExit();
     return;
+  }
+
+  if (marketplace.plugins.length === 0) {
+    addWarning("Marketplace has no plugins registered yet.");
   }
 
   const pluginRoot = marketplace.metadata?.pluginRoot;
@@ -349,9 +353,10 @@ async function main() {
       addWarning(`${entry.name}: no hooks/hooks.json file found (only needed when using hooks).`);
     }
 
-    const mcpPath = path.join(pluginDir, "mcp.json");
-    if (!(await pathExists(mcpPath))) {
-      addWarning(`${entry.name}: no mcp.json file found (only needed when using MCP servers).`);
+    const mcpPath = path.join(pluginDir, ".mcp.json");
+    const mcpPathLegacy = path.join(pluginDir, "mcp.json");
+    if (!(await pathExists(mcpPath)) && !(await pathExists(mcpPathLegacy))) {
+      addWarning(`${entry.name}: no .mcp.json file found (only needed when using MCP servers).`);
     }
   }
 

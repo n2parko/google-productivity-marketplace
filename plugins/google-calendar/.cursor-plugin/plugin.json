@@ -1,0 +1,12 @@
+{
+  "name": "google-calendar",
+  "displayName": "Google Calendar",
+  "version": "0.1.0",
+  "description": "View agenda, create events, find free time, and manage your schedule with the gws CLI.",
+  "author": {
+    "name": "Team"
+  },
+  "license": "MIT",
+  "keywords": ["cursor", "plugin", "calendar", "google-calendar", "google-workspace", "gws"],
+  "logo": "assets/logo.svg"
+}

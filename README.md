@@ -1,41 +1,29 @@
-# Cursor Trial Plugins
+# Team Marketplace
 
-An example Team Marketplace that includes a set of starter plugins for Cursor.
+A Cursor Team Marketplace for sharing plugins across the team.
 
-## Included plugins
+## Getting started
 
-This repo currently ships five grouped plugins:
-
-- **git-workflows**: commit, PR, CI, merge conflict, and branch validation workflows
-- **documentation**: README updates, weekly review summaries, markdown naming, and docs writing
-- **pm**: Ticket-oriented PM workflows with MCP config, ticket writing, and board summarization
-- **design**: wireframes, component design support, and mockup workflow
-- **testing-reliability**: Datadog dashboards, performance optimization, and testing agents
+Add a new plugin by following the guide in [docs/add-a-plugin.md](docs/add-a-plugin.md).
 
 ## Repository structure
 
-- `.cursor-plugin/marketplace.json`: marketplace manifest and plugin registry
-- `plugins/<plugin-name>/.cursor-plugin/plugin.json`: per-plugin metadata
-- `plugins/<plugin-name>/rules`: rule files (`.mdc`)
-- `plugins/<plugin-name>/skills`: skill folders with `SKILL.md`
-- `plugins/<plugin-name>/agents`: subagent definitions
-- `plugins/<plugin-name>/mcp.json`: MCP server configuration for each plugin
+- `.cursor-plugin/marketplace.json` — marketplace manifest and plugin registry
+- `plugins/<plugin-name>/.cursor-plugin/plugin.json` — per-plugin metadata
+- `plugins/<plugin-name>/rules/` — rule files (`.mdc`)
+- `plugins/<plugin-name>/skills/` — skill folders with `SKILL.md`
+- `plugins/<plugin-name>/agents/` — subagent definitions
+- `plugins/<plugin-name>/mcp.json` — MCP server configuration
 
 ## Validate changes
-
-Run:
 
 ```bash
 node scripts/validate-template.mjs
 ```
 
-This checks marketplace paths, plugin manifests, and required frontmatter in rule/skill/agent/command files.
+## Adding a plugin
 
-## Submission checklist
-
-- Each plugin has a valid `.cursor-plugin/plugin.json`
-- Plugin names are unique, lowercase, and kebab-case
-- `.cursor-plugin/marketplace.json` entries map to real plugin folders
-- Required frontmatter metadata exists in plugin content files
-- Logo paths resolve correctly from each plugin manifest
-- `node scripts/validate-template.mjs` passes
+1. Create `plugins/<your-plugin>/` with a `.cursor-plugin/plugin.json` manifest
+2. Add skills, rules, agents, or MCP configs as needed
+3. Register the plugin in `.cursor-plugin/marketplace.json`
+4. Run the validation script to verify everything is wired up correctly

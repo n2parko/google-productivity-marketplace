@@ -1,0 +1,12 @@
+{
+  "name": "gmail",
+  "displayName": "Gmail",
+  "version": "0.1.0",
+  "description": "Send, read, triage, and manage email with the gws CLI.",
+  "author": {
+    "name": "Team"
+  },
+  "license": "MIT",
+  "keywords": ["cursor", "plugin", "gmail", "email", "google-workspace", "gws"],
+  "logo": "assets/logo.svg"
+}
