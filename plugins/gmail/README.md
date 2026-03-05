@@ -23,7 +23,3 @@ Send, read, triage, and manage email using the [gws CLI](https://github.com/goog
 ## Agent
 
 **inbox-manager** — Triages your inbox, drafts replies, and keeps email organized. Start a conversation and ask it to check your inbox.
-
-## MCP
-
-This plugin exposes Gmail as an MCP server via `gws mcp -s gmail -e`, giving the agent direct tool access to all Gmail API methods.

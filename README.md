@@ -32,10 +32,6 @@ Send, read, triage, and manage email.
 
 **inbox-manager** — Triages your inbox, drafts replies, and keeps email organized. Checks auth on start, summarizes what needs attention, and never sends without confirmation.
 
-### MCP
-
-Exposes Gmail API tools via `gws mcp -s gmail -e` so the agent can call any Gmail method directly.
-
 ---
 
 ## Google Calendar
@@ -57,6 +53,3 @@ View agenda, create events, find free time, and manage your schedule.
 
 **schedule-manager** — Manages your calendar end-to-end. Checks auth on start, views your agenda, finds available slots across attendees, and books or reschedules meetings with confirmation.
 
-### MCP
-
-Exposes Google Calendar API tools via `gws mcp -s calendar -e` so the agent can call any Calendar method directly.

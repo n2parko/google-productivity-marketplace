@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "gws-gmail": {
-      "command": "gws",
-      "args": ["mcp", "-s", "gmail", "-e"]
-    }
-  }
-}

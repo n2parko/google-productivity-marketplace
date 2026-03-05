@@ -22,7 +22,3 @@ View agenda, create events, find free time, and manage your schedule using the [
 ## Agent
 
 **schedule-manager** — Manages your calendar end-to-end. Ask it to check your day, find time for a meeting, or reschedule something.
-
-## MCP
-
-This plugin exposes Google Calendar as an MCP server via `gws mcp -s calendar -e`, giving the agent direct tool access to all Calendar API methods.

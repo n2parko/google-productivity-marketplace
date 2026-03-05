@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "gws-calendar": {
-      "command": "gws",
-      "args": ["mcp", "-s", "calendar", "-e"]
-    }
-  }
-}
