@@ -1,29 +1,34 @@
-# Team Marketplace
+# Productivity Marketplace
 
-A Cursor Team Marketplace for sharing plugins across the team.
+A Cursor Team Marketplace with Google Workspace plugins powered by the [gws CLI](https://github.com/googleworkspace/cli).
 
-## Getting started
+## Plugins
 
-Add a new plugin by following the guide in [docs/add-a-plugin.md](docs/add-a-plugin.md).
+| Plugin | Description |
+|--------|-------------|
+| [Gmail](plugins/gmail/) | Send, read, triage, and manage email |
+| [Google Calendar](plugins/google-calendar/) | View agenda, create events, find free time, and manage your schedule |
+
+## Setup
+
+1. Install the gws CLI: `npm install -g @googleworkspace/cli`
+2. Authenticate: `gws auth setup`
+3. Install plugins from this marketplace in Cursor
 
 ## Repository structure
 
-- `.cursor-plugin/marketplace.json` — marketplace manifest and plugin registry
-- `plugins/<plugin-name>/.cursor-plugin/plugin.json` — per-plugin metadata
-- `plugins/<plugin-name>/rules/` — rule files (`.mdc`)
-- `plugins/<plugin-name>/skills/` — skill folders with `SKILL.md`
-- `plugins/<plugin-name>/agents/` — subagent definitions
-- `plugins/<plugin-name>/mcp.json` — MCP server configuration
-
-## Validate changes
-
-```bash
-node scripts/validate-template.mjs
 ```
-
-## Adding a plugin
-
-1. Create `plugins/<your-plugin>/` with a `.cursor-plugin/plugin.json` manifest
-2. Add skills, rules, agents, or MCP configs as needed
-3. Register the plugin in `.cursor-plugin/marketplace.json`
-4. Run the validation script to verify everything is wired up correctly
+.cursor-plugin/marketplace.json          # marketplace manifest
+plugins/gmail/                           # Gmail plugin
+  .cursor-plugin/plugin.json             # plugin manifest
+  .mcp.json                              # MCP server config
+  skills/                                # 7 skills (setup, send, triage, search, labels, drafts, filters)
+  agents/inbox-manager.md                # inbox management agent
+  assets/logo.svg                        # plugin logo
+plugins/google-calendar/                 # Google Calendar plugin
+  .cursor-plugin/plugin.json             # plugin manifest
+  .mcp.json                              # MCP server config
+  skills/                                # 6 skills (setup, agenda, create, free time, reschedule, recurring)
+  agents/schedule-manager.md             # schedule management agent
+  assets/logo.svg                        # plugin logo
+```
